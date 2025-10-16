@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "text-h1";
+  src: url(./fonts/63cffc0a3942456e003bc265_Chillax-Regular.woff);
+}
+@font-face {
+  font-family: "text-p";
+  src: url(./fonts/63cffc20aa8997095067596f_Satoshi-Light.woff);
+}
+@font-face {
+  font-family: "studio";
+  src: url(./fonts/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2);
+}
+
+@import 'mixin';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  background-color: #121212;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+section {
+  max-width: 1800px;
+}
+
+main {
+  width: 100%;
+  padding: 1rem;
+  @include flex-box();
+  align-items: center;
+
+  section {
+    width: 100%;
+    @include flex-box(0.7rem);
+
+    .top img {
+      width: 100%;
+      border-radius: 0.5rem;
+      object-fit: cover;
+    }
+
+    .bottom {
+      @include flex-box();
+      justify-content: space-between;
+      background-color: #1E1E1E;
+      color: #efe7de;
+      padding: 1.75rem;
+      border-radius: 0.5rem;
+
+      .text-meta p {
+        font-family: "studio";
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        line-height: 160%;
+        margin-bottom: 4rem;
+        font-weight: 400;
+      }
+
+      .text {
+        @include flex-box(1rem);
+
+        h1 {
+          font-family: "text-h1";
+          font-size: clamp(2rem, 3vw, 3rem);
+          font-weight: 400;
+          text-transform: uppercase;
+          line-height: 120%;
+        }
+
+        p {
+          font-family: "text-p";
+          opacity: 0.6;
+          font-size: clamp(1rem, 1.5vw, 1.3rem);
+          line-height: 160%;
+          letter-spacing: 0.5px;
+        }
+
+        h5 {
+          margin-top: 2rem;
+          display: flex;
+          align-items: center;
+          gap: 0.7rem;
+          letter-spacing: 1px;
+          cursor: pointer;
+          font-family: "studio";
+          font-weight: 400;
+
+          i {
+            font-size: 1rem;
+            color: #efe7de;
+            padding: 1vw;
+            border-radius: 50%;
+            background-color: #2c2b2b;
+            border: 1px solid #999393;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 990px) {
+  .sec-1 {
+    flex-direction: row;
+    gap: 1rem;
+
+    .top {
+      width: 50%;
+
+      img {
+        height: 100vh;
+        border-radius: 1rem;
+      }
+    }
+
+    .bottom {
+      width: 50%;
+      padding: 3rem;
+      border-radius: 1rem;
+
+      .text-meta {
+        margin-bottom: 8rem;
+      }
+
+      .text h1 {
+        margin-bottom: 0.6rem;
+      }
+
+      .text h5 {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+}
